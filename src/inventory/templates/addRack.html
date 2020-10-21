@@ -1,0 +1,18 @@
+{% extends 'baseAdmin.html' %}
+{% block content %}
+<section>
+    <div class="jumbotron" data-aos="zoom-in" style="margin: 30px;">
+        <div class="form-group">
+            <form method="post" action="addRack"> {% csrf_token %}
+              <label>Rack name :</label>
+              <input name="rackName" class="form-control" type="text">
+              <label>Number of slots:</label>
+              <input name="slots" class="form-control" type="number">
+              <label>Description</label>
+              <textarea name="desc" class="form-control"></textarea>
+              <br><br>
+              <button class="btn btn-primary" type="submit">Add</button></form>
+        </div>
+    </div>
+</section>
+{% endblock %}

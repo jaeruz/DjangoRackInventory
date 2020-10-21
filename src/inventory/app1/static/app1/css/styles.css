@@ -1,0 +1,26 @@
+#sect {
+  width: 100%;
+  height: 100vh;
+}
+
+.navbar-light .navbar-brand {
+  background-image: url("../../assets/img/kawasakiwhite.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 200px;
+  height: 40px;
+}
+
+.navbar-light .navbar-brand {
+  margin-left: -25px;
+}
+
+#divlog {
+  padding: 70px;
+  align-content: center;
+}
+
+#head {
+}
+

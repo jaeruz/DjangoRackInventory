@@ -1,0 +1,20 @@
+{% extends 'baseIndex.html' %}
+
+{% block content %}
+<div id="divlog">
+    <div class="jumbotron" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" style="background-color: rgba(254,254,255,0.12);">
+        <h1 id="head" style="color: rgb(30,40,51);">E-KANBAN SYSTEM</h1>
+        <p>A systematic way to track items using arduino based application</p>
+        {% if user.is_authenticated %}
+          {% if user.is_superuser%}
+            <p><a class="btn btn-primary" role="button" href="adminPanel">Procede to Admin Panel</a></p>
+          {% else %}
+            <p><a class="btn btn-primary" role="button" href="adminPanel">Procede to User Panel</a></p>
+          {% endif %}
+        {% else %}
+        <p><a class="btn btn-primary" role="button" href="login">Login</a></p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

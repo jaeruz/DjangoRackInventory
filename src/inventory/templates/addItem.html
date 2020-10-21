@@ -1,0 +1,22 @@
+{% extends 'baseAdmin.html' %}
+{% block content %}
+<section>
+    <div class="jumbotron" data-aos="zoom-in" style="margin: 30px;">
+        <div class="form-group">
+            <form method="post" action="addItem"> {% csrf_token %}
+              <label>Item name :</label>
+              <input class="form-control" type="text" name="itemName">
+              <label>Item ID :</label>
+              <input class="form-control" type="text" name="itemID">
+              <label>Serial ID :</label>
+              <input class="form-control" type="text" name="serialID">
+              <label>Quantity :</label>
+              <input class="form-control" type="number" name="quantity">
+              <label>Description</label>
+              <textarea class="form-control" type="text" name="description"></textarea>
+              <br><br>
+              <button class="btn btn-primary" type="submit">Add Item</button></form>
+        </div>
+    </div>
+</section>
+{% endblock %}

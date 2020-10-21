@@ -1,0 +1,54 @@
+{% extends 'baseAdmin.html' %}
+
+{% block content %}
+
+<div class="container" data-aos="zoom-in" style="margin-top: 40px;padding: 30px;background-color: rgba(233,236,239,0.95);">
+    <h1>{{rack}}<i onclick="httpGet('javascript:history.back()')" class="fa fa-arrow-left" data-bs-hover-animate="pulse" style="position: absolute;right: 25px;color: rgb(118,116,116);font-size: 20px;cursor:pointer"></i></h1>
+    <div class="col-md-12 search-table-col">
+        <div class="form-group pull-right col-lg-4"><input type="text" class="search form-control" placeholder="Search by typing here.."></div><span class="counter pull-right"></span>
+
+          <span class="counter pull-right">
+            <i class="fa fa-plus" style="padding-right: 5px;"></i>
+            <a href="rackAddItem?itemID=*,{{rack}},{{slot}},{{oc}}">Add Item</a>
+          </span>
+
+        <div class="table-responsive table-bordered table table-hover table-bordered results">
+            <table class="table table-bordered table-hover">
+                <thead class="bill-header cs">
+                    <tr>
+                        <th id="trs-hd" class="col-lg-2">Name</th>
+                        <th id="trs-hd" class="col-lg-1">Item ID</th>
+                        <th id="trs-hd" class="col-lg-3">Serial</th>
+                        <th id="trs-hd" class="col-lg-2">Description</th>
+                        <th id="trs-hd" class="col-lg-2">Quantity</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="warning no-result">
+                        <td colspan="12"><i class="fa fa-warning"></i>&nbsp; No Result !!!</td>
+                    </tr>
+                    {% for i in ret %}
+                    <tr>
+                        <td>{{i.name}}</td>
+                        <td>{{i.itemID}}</td>
+                        <td>{{i.seralID}}</td>
+                        <td>{{i.description}}</td>
+                        <td>{{oc}}</td>
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+  function httpGet(theUrl)
+  {
+
+      window.location.href=theUrl;
+  }
+</script>
+
+{% endblock %}

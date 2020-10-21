@@ -1,0 +1,22 @@
+inventory system
+
+	server
+		database
+	client
+		login
+		register
+
+		-admin
+			-rack monitoring
+				-item monitoring
+			-add new rack
+				(number of slots included)
+			-add item
+				(item details,rack id)
+			-update item
+				-delete
+				-edit details
+
+		
+		-user
+			-rack monitoring

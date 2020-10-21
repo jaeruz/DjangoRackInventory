@@ -1,0 +1,17 @@
+{% extends 'baseIndex.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="login-dark" style="background-repeat: no-repeat;background-size: cover;background-image: url({% static 'app1/img/motor.jpg' %});background-position: center;height: 727px;">
+    <section data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" style="height: 700px;">
+        <form action="login" method="post"> {% csrf_token %}
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+            <div class="form-group"><input class="form-control" type="text" name="uname" placeholder="Username"></div>
+            <div class="form-group"><input class="form-control" type="password" name="pass1" placeholder="Password"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div><a class="forgot" href="register">Create Account</a></form>
+    </section>
+</div>
+
+{% endblock %}

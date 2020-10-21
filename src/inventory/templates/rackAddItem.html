@@ -1,0 +1,58 @@
+{% extends 'baseAdmin.html' %}
+
+{% block content %}
+<div class="container" data-aos="zoom-in" style="margin-top: 40px;padding: 30px;background-color: rgba(233,236,239,0.95);">
+    <h1>Add item on rack</h1>
+    <div class="col-md-12 search-table-col">
+        <div class="form-group pull-right col-lg-4"><input type="text" class="search form-control" placeholder="Search by typing here.."></div>
+        <div class="table-responsive table-bordered table table-hover table-bordered results">
+            <table class="table table-bordered table-hover">
+                <thead class="bill-header cs">
+                    <tr>
+                        <th id="trs-hd" class="col-lg-1">Name</th>
+                        <th id="trs-hd" class="col-lg-2">ID</th>
+                        <th id="trs-hd" class="col-lg-3">Serial</th>
+                        <th id="trs-hd" class="col-lg-2">Description</th>
+                        <th id="trs-hd" class="col-lg-2">Quantity</th>
+                        <th id="trs-hd" class="col-lg-2">Status</th>
+                        <th id="trs-hd" class="col-lg-2">rack</th>
+                        <th id="trs-hd" class="col-lg-2">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="warning no-result">
+                        <td colspan="12"><i class="fa fa-warning"></i>&nbsp; No Result !!!</td>
+                    </tr>
+                    {% for returnMatch in data %}
+                    <tr>
+                        <td>{{returnMatch.name}}</td>
+                        <td>{{returnMatch.itemID}}</td>
+                        <td>{{returnMatch.seralID}}</td>
+                        <td>{{returnMatch.description}}</td>
+                        <td>{{returnMatch.quantity}}</td>
+                        <td>{{returnMatch.status}}</td>
+                        <td>{{returnMatch.rack}}</td>
+                        <td>
+                          <form action="rackAddItem" method="GET">
+                            <button class="btn btn-success" style="margin-left: 5px;" name="itemID" type="submit" value="{{returnMatch.itemID}},{{rack}},{{slot}},{{oc}}" onclick="btnClick()">
+                              <i class="fa fa-plus" style="font-size: 15px;"></i>
+                            </button>
+                          </form>
+
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+</div>
+</div>
+
+<script type="text/javascript">
+  function btnClick()
+  {
+    //alert("item added");
+  }
+</script>
+
+{% endblock %}

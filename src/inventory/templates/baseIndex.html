@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>test</title>
+    <link rel="stylesheet" href="{% static 'app1/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/css/Footer-Dark.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    <link rel="stylesheet" href="{% static 'app1/css/Login-Form-Dark-1.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/css/Login-Form-Dark.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/css/MUSA_panel-table-1.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/css/MUSA_panel-table.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/css/Registration-Form-with-Photo.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/css/Sidebar-Menu-1.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/css/Sidebar-Menu.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/css/Table-With-Search-1.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/css/Table-With-Search.css' %}">
+</head>
+
+<body>
+    <section id="sect" style="background-position: center;background-size: cover;background-repeat: no-repeat;height: 800px;">
+        <nav class="navbar navbar-light navbar-expand-md" style="padding-top: 20px;color: rgb(252,251,251);background-color: rgb(30,40,51);">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#" style="color: rgba(248,245,245,0.9);background-color: rgba(251,251,251,0);background-position: center;background-size: cover;background-repeat: no-repeat;width: 90px;height: 45px;margin-left: -4px;">E-Kanban System</a>
+                <button
+                    data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav mx-auto" style="color: inherit;">
+                            <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-hover-animate="pulse" href="/" style="color: rgba(255,255,255,0.9);">Welcome</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: rgba(254,254,254,0.55);">About</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: rgba(254,254,254,0.55);">Contact Us</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            {% if user.is_authenticated %}
+                                <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-hover-animate="pulse" href="logout" style="color: #fcf9f9;">Logout</a></li>
+                            {% else %}
+                            <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-hover-animate="pulse" href="login" style="color: #fcf9f9;">Login</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="pulse" href="register" style="color: rgba(254,254,254,0.56);">Create Account</a></li>
+                            <li class="nav-item" role="presentation"></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+            </div>
+        </nav>
+        <section style="background-image: url({% static 'app1/img/motor.jpg' %});background-position: center;background-size: cover;background-repeat: no-repeat;height: 727px;">
+          {% block content %}
+
+          {% endblock %}
+        </section>
+
+    </section>
+
+    <script src="{% static 'app1/js/jquery.min.js' %}"></script>
+    <script src="{% static 'app1/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'app1/js/bs-animation.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="{% static 'app1/js/Sidebar-Menu.js' %}"></script>
+    <script src="{% static 'app1/js/Table-With-Search.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+{% extends 'baseAdmin.html' %}
+{% block content %}
+<section>
+    <div class="jumbotron" data-aos="zoom-in" style="margin: 30px;">
+        <div class="form-group">
+          {% for i in returnMatch %}
+            <form method="post" action="editItem"> {% csrf_token %}
+              <label>Item ID : </label>
+              <input class="form-control" type="text" name="itemID" value="{{i.itemID}}" readonly>
+              <label>Item name : </label>
+              <input class="form-control" type="text" name="itemName" value="{{i.name}}">
+              <label>Serial ID :</label>
+              <input class="form-control" type="text" name="serialID" value="{{i.seralID}}">
+              <label>Quantity :</label>
+              <input class="form-control" type="number" name="quantity" value="{{i.quantity}}">
+              <label>Description</label>
+              <textarea class="form-control" type="text" name="description" value="{{i.description}}"></textarea>
+              <br><br>
+              <button class="btn btn-primary" type="submit">save Item</button></form>
+          {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
